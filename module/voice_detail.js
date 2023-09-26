@@ -1,12 +1,11 @@
-// 获取 VIP 信息
-
 module.exports = (query, request) => {
+  const data = {
+    id: query.id,
+  }
   return request(
     'POST',
-    `https://music.163.com/weapi/music-vip-membership/front/vip/info`,
-    {
-      userId: query.uid || '',
-    },
+    `https://interface.music.163.com/weapi/voice/workbench/voice/detail`,
+    data,
     {
       crypto: 'weapi',
       cookie: query.cookie,

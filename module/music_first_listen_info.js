@@ -1,12 +1,13 @@
-// 获取 VIP 信息
+// 回忆坐标
 
 module.exports = (query, request) => {
+  const data = {
+    songId: query.id,
+  }
   return request(
     'POST',
-    `https://music.163.com/weapi/music-vip-membership/front/vip/info`,
-    {
-      userId: query.uid || '',
-    },
+    `https://interface3.music.163.com/api/content/activity/music/first/listen/info`,
+    data,
     {
       crypto: 'weapi',
       cookie: query.cookie,

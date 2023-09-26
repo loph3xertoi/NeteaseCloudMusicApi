@@ -244,6 +244,13 @@ export function artists(
   params: { id: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
+export function audio_match(
+  params: {
+    duration: string | number
+    audioFP: string | number
+  } & RequestBaseConfig,
+): Promise<Response>
+
 export function avatar_upload(
   params: ImageUploadConfig & RequestBaseConfig,
 ): Promise<Response>
@@ -1614,7 +1621,17 @@ export function musician_cloudbean_obtain(
   } & RequestBaseConfig,
 ): Promise<Response>
 
-export function vip_info(params: RequestBaseConfig): Promise<Response>
+export function vip_info(
+  params: {
+    uid?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function vip_info_v2(
+  params: {
+    uid?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
 
 export function musician_sign(params: RequestBaseConfig): Promise<Response>
 
@@ -1772,3 +1789,9 @@ export function style_artist(
 ): Promise<Response>
 
 export function pl_count(params: RequestBaseConfig): Promise<Response>
+
+export function get_userids(
+  params: {
+    nicknames: string
+  } & RequestBaseConfig,
+): Promise<Response>
